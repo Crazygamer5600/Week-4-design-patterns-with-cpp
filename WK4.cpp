@@ -47,12 +47,12 @@ public:
 			std::cout << "Removed!\n";
 		}
 		else {
-			std::cout << "Not in Data Set!";
+			std::cout << "Not in Data Set!\n";
 		}
 	}
 
 	static void toString(std::set<int>& inptSet) {
-		std::cout << "your set ";
+		std::cout << "your set: ";
 		for (int num : inptSet) {
 			std::cout << num << " ";
 		}
