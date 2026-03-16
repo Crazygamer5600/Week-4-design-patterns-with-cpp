@@ -2,9 +2,9 @@
 #include <string>
 #include <set>
 
-class Validator {
+class SetManager {
 public:
-	static int getValidInt() {
+	static int ValidateInpt() {
 		std::string validator;
 		int inpt = NULL;
 
@@ -12,7 +12,6 @@ public:
 
 		while (inpt == NULL) {
 			std::cin >> validator;
-
 			try {
 				inpt = stoi(validator);
 			}
@@ -22,11 +21,20 @@ public:
 		}
 		return inpt;
 	}
+	static int find(std::set<int> inptSet, int searchedParam) {
+		if (inptSet.find(searchedParam) != inptSet.end()) {
+			std::cout << "found!";
+			return *inptSet.find(searchedParam);
+		}
+		return NULL;
+	}
+
 
 };
 
 int main() {
 	std::set<int> usrInptSet;
-	usrInptSet = { Validator::getValidInt()};
+	usrInptSet = { SetManager::ValidateInpt()};
+	SetManager::find(usrInptSet, SetManager::ValidateInpt());
 	return 0;
 }
