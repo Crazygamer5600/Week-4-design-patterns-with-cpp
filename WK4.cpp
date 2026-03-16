@@ -9,7 +9,7 @@ public:
 		std::string validator;
 		int inpt;
 
-		std::cout << "Please enter an integer value: ";
+		std::cout << "Please enter an integer value or press Q to quit: ";
 
 		while (true) {
 			std::cin >> validator;
@@ -22,7 +22,7 @@ public:
 				return std::to_string(inpt);
 			}
 			catch (std::invalid_argument) {
-				std::cout << "Please enter an integer value: ";
+				std::cout << "Please enter a valid integer value or press Q to quit: ";
 			}
 		}
 	}
@@ -77,6 +77,7 @@ int main() {
 
 	std::cout << "Search for a Number! \n";
 	SetManager::find(usrInptSet, SetManager::ValidateInpt());
+	std::cout<<"Remove a number in your set!\n";
 	SetManager::erase(usrInptSet, SetManager::ValidateInpt());
 	SetManager::toString(usrInptSet);
 
